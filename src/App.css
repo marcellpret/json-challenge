@@ -3,14 +3,14 @@
   margin: 0 auto;
 }
 
-.response-container {
+#response-container {
   padding: 1rem;
   border: 1px solid #646cff;
   border-radius: 8px;
   font-size: 1.3rem;
 }
 
-.response-container h1 {
+#response-container h1 {
   margin-bottom: 1rem;
 }
 
@@ -60,5 +60,9 @@ input {
 
 .array-class div.object-class,
 .array-class div.object-class .property-class {
+  margin-left: 2rem;
+}
+
+.object-key~* {
   margin-left: 2rem;
 }

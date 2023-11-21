@@ -29,8 +29,6 @@ export default function JsonExplorer({ res }: { res: jsonData }) {
                     : undefined;
             }, res);
 
-            console.log("VALUE: ", value);
-
             if (
                 Array.isArray(value) ||
                 (typeof value === "object" && value !== null)
@@ -45,7 +43,12 @@ export default function JsonExplorer({ res }: { res: jsonData }) {
         handleValue(property);
     }, [property, res]);
 
-    const renderJsonValue = (key: string, value: string, path: string) => {
+    const renderJsonValue = (
+        key: string,
+        value: string,
+        path: string,
+        renderKeys: boolean = false
+    ) => {
         if (typeof value === "object" && value !== null) {
             if (Array.isArray(value)) {
                 return (
@@ -59,7 +62,7 @@ export default function JsonExplorer({ res }: { res: jsonData }) {
                                     `${path}.${subKey}`
                                 )
                             )}
-                            {"]"}
+                            {"],"}
                         </div>
                     </div>
                 );
@@ -67,12 +70,16 @@ export default function JsonExplorer({ res }: { res: jsonData }) {
                 return (
                     <div key={key} className="object-class">
                         <div>
-                            {key ? "{" : ""}
+                            {renderKeys && (
+                                <span className="object-key">{key}: </span>
+                            )}
+                            {"{"}
                             {Object.entries(value).map(([subKey, subValue]) =>
                                 renderJsonValue(
                                     subKey,
                                     subValue,
-                                    `${path}.${subKey}`
+                                    `${path}.${subKey}`,
+                                    true
                                 )
                             )}
                             {key ? "}," : ""}
@@ -122,7 +129,7 @@ export default function JsonExplorer({ res }: { res: jsonData }) {
             <p>{value || "undefined"}</p>
             <div>
                 <h2>Response</h2>
-                <div className="response-container">
+                <div id="response-container">
                     {renderJsonValue("", res, "res")}
                 </div>
             </div>

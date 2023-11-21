@@ -13,6 +13,27 @@ const data: jsonData = {
             hasError: false,
         },
     ],
+    text: {
+        title: {
+            value: "Test title",
+            hasError: false,
+        },
+        description: "Test description",
+        text2: {
+            title: {
+                value: "Test title",
+                hasError: false,
+            },
+            description: "Test description",
+        },
+    },
+    text2: {
+        title: {
+            value: "Test title",
+            hasError: false,
+        },
+        description: "Test description",
+    },
 };
 
 function App() {
