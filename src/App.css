@@ -1,0 +1,37 @@
+#root {
+  width: min(90vw, 1000px);
+  margin: 0 auto;
+}
+
+.response-container {
+  padding: 1rem;
+  border: 1px solid #646cff;
+  border-radius: 8px;
+}
+
+label {
+  display: block;
+  margin-bottom: 0.2rem;
+}
+
+input {
+  padding: 0.5rem;
+}
+
+.property-class span {
+  margin-right: 1rem;
+  cursor: pointer;
+  color: blue
+}
+
+.property-class span:hover {
+  text-decoration: underline;
+}
+
+.array-class div.object-class {
+  margin-left: 1rem;
+}
+
+.array-class div.object-class .property-class {
+  margin-left: 1rem;
+}
