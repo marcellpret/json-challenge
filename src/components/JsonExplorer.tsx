@@ -93,20 +93,33 @@ export default function JsonExplorer({ res }: { res: jsonData }) {
     return (
         <div>
             <h1>JSON Explorer</h1>
-
-            <label htmlFor="property">Property</label>
-            <input
-                type="text"
-                id="property"
-                name="property"
-                placeholder="Property"
-                onChange={(e) => handleInputChange(e.target.value)}
-                value={property}
-                ref={inputProperty}
-            />
+            <div className="input-fields">
+                <div>
+                    <label htmlFor="property">Property</label>
+                    <input
+                        type="text"
+                        id="property"
+                        name="property"
+                        placeholder="Property"
+                        onChange={(e) => handleInputChange(e.target.value)}
+                        value={property}
+                        ref={inputProperty}
+                    />
+                    <span>→</span>
+                </div>
+                <div>
+                    <label htmlFor="variable">Block / Variable</label>
+                    <input
+                        type="text"
+                        id="variable"
+                        name="variable"
+                        placeholder="Variable"
+                    />
+                    <span>–</span>
+                </div>
+            </div>
 
             <p>{value || "undefined"}</p>
-
             <div>
                 <h2>Response</h2>
                 <div className="response-container">

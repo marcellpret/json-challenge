@@ -7,6 +7,11 @@
   padding: 1rem;
   border: 1px solid #646cff;
   border-radius: 8px;
+  font-size: 1.3rem;
+}
+
+.response-container h1 {
+  margin-bottom: 1rem;
 }
 
 label {
@@ -16,6 +21,31 @@ label {
 
 input {
   padding: 0.5rem;
+}
+
+.input-fields {
+  display: flex;
+  gap: 1rem;
+  max-width: 500px;
+}
+
+.input-fields div {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  column-gap: 1rem;
+}
+
+.input-fields div span {
+  font-size: 2rem;
+}
+
+.input-fields div label {
+  width: 100%;
+}
+
+.property-class {
+  margin-block: 0.4rem;
 }
 
 .property-class span {
@@ -28,10 +58,7 @@ input {
   text-decoration: underline;
 }
 
-.array-class div.object-class {
-  margin-left: 1rem;
-}
-
+.array-class div.object-class,
 .array-class div.object-class .property-class {
-  margin-left: 1rem;
+  margin-left: 2rem;
 }
